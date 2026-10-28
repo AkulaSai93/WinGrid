@@ -28,7 +28,7 @@ export default function ForgotPasswordPage() {
       title={step === "done" ? "Password updated" : "Reset your password"}
       subtitle={step === "email" ? "We'll send a one-time code to your work email." : step === "otp" ? `Enter the 6-digit code sent to ${email}.` : step === "password" ? "Choose a new password." : undefined}
     >
-      <div className="rounded-xl border border-line bg-white p-5 shadow-sm">
+      <div className="rounded-lg border border-line bg-white p-5 shadow-sm">
         {step === "email" && (
           <form
             noValidate

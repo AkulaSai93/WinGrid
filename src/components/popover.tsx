@@ -23,7 +23,7 @@ export function Popover({ trigger, children, align = "left", width = "w-60", lab
     <div className="relative" ref={ref}>
       <span onClick={() => setOpen((o) => !o)}>{trigger(open)}</span>
       {open && (
-        <div role="dialog" aria-label={label} className={cn("absolute z-40 mt-1 rounded-xl border border-line bg-white p-1.5 shadow-lg", width, align === "right" ? "right-0" : "left-0")}>
+        <div role="dialog" aria-label={label} className={cn("absolute z-40 mt-1 rounded-lg border border-line bg-white p-1.5 shadow-lg", width, align === "right" ? "right-0" : "left-0")}>
           {children(() => setOpen(false))}
         </div>
       )}

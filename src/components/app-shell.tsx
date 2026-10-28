@@ -111,7 +111,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     aria-current={active ? "page" : undefined}
                     aria-label={collapsed ? i.label : undefined}
                     className={cn(
-                      "flex h-9 items-center gap-3 rounded-xl px-3 text-[13.5px] font-medium transition-all",
+                      "flex h-9 items-center gap-3 rounded-lg px-3 text-[13.5px] font-medium transition-all",
                       active ? "bg-white text-slate-900 shadow-[0_1px_2px_rgba(16,24,40,0.06),0_0_0_1px_rgba(16,24,40,0.04)]" : "text-slate-500 hover:bg-white/70 hover:text-slate-900",
                       disabled && "opacity-50",
                       collapsed && "justify-center px-0",
@@ -145,7 +145,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         </div>
         {nav}
         <div className="p-3">
-          <button type="button" onClick={toggle} aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"} className={cn("flex h-8 w-full items-center gap-2 rounded-xl px-3 text-[13px] text-slate-400 hover:bg-white/70 hover:text-slate-700", collapsed && "justify-center px-0")}>
+          <button type="button" onClick={toggle} aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"} className={cn("flex h-8 w-full items-center gap-2 rounded-lg px-3 text-[13px] text-slate-400 hover:bg-white/70 hover:text-slate-700", collapsed && "justify-center px-0")}>
             {collapsed ? <ChevronsRight className="size-4" /> : <ChevronsLeft className="size-4" />}
             {!collapsed && "Collapse"}
           </button>
@@ -169,7 +169,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
       <div className="flex min-w-0 flex-1 flex-col">
         <Topbar onMenu={() => setMobileOpen(true)} />
-        <main className="relative flex-1 overflow-y-auto bg-white scrollbar-thin md:mr-2 md:mb-2 md:rounded-2xl md:border md:border-line md:shadow-[0_1px_3px_rgba(16,24,40,0.04)]">
+        <main className="relative flex-1 overflow-y-auto bg-white scrollbar-thin md:mr-2 md:mb-2 md:rounded-lg md:border md:border-line md:shadow-[0_1px_3px_rgba(16,24,40,0.04)]">
           <div className="mx-auto w-full max-w-[1600px] px-4 py-6 sm:px-8">
             {needsOrgButMissing ? <ChooseOrg /> : children}
           </div>
@@ -182,7 +182,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 function ChooseOrg() {
   const { db, enterOrg } = useStore();
   return (
-    <div className="mx-auto mt-10 max-w-lg rounded-xl border border-line bg-white p-6">
+    <div className="mx-auto mt-10 max-w-lg rounded-lg border border-line bg-white p-6">
       <h1 className="text-base font-semibold">Choose an organization workspace</h1>
       <p className="mt-1 text-sm text-muted">Super Admins don&apos;t belong to an organization. Entering a workspace is deliberate and recorded in the audit log.</p>
       <ul className="mt-4 divide-y divide-line rounded-lg border border-line">
@@ -253,7 +253,7 @@ function Topbar({ onMenu }: { onMenu: () => void }) {
             <ChevronDown className="size-4 text-slate-400" />
           </button>
           {menuOpen && (
-            <div role="menu" className="absolute right-0 z-50 mt-1 w-64 rounded-xl border border-line bg-white p-1.5 shadow-lg">
+            <div role="menu" className="absolute right-0 z-50 mt-1 w-64 rounded-lg border border-line bg-white p-1.5 shadow-lg">
               <div className="px-2.5 py-2">
                 <p className="text-sm font-medium">{user.name}</p>
                 <p className="text-xs text-muted">{user.email}</p>
@@ -344,12 +344,12 @@ function GlobalSearch() {
         aria-expanded={open && results.length > 0}
         aria-controls="global-search-results"
         aria-label="Search leads and opportunities"
-        placeholder="Search leads, phone, email…"
-        className="h-9 w-full rounded-xl border border-transparent bg-white pr-14 pl-9 text-sm shadow-[0_0_0_1px_rgba(16,24,40,0.06)] placeholder:text-slate-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-100 focus:outline-none"
+        placeholder="Search…"
+        className="h-9 w-full rounded-lg border border-transparent bg-white pr-14 pl-9 text-sm shadow-[0_0_0_1px_rgba(16,24,40,0.06)] placeholder:text-slate-400 focus:border-brand-400 focus:ring-2 focus:ring-brand-100 focus:outline-none"
       />
-      <kbd className="pointer-events-none absolute top-1/2 right-2.5 hidden -translate-y-1/2 rounded border border-line bg-white px-1.5 text-[10px] text-slate-400 sm:block">⌘K</kbd>
+      <kbd className="pointer-events-none absolute top-1/2 right-2.5 hidden md:block -translate-y-1/2 rounded-sm border border-line bg-white px-1.5 text-[10px] text-slate-400">⌘K</kbd>
       {open && q.trim().length >= 2 && (
-        <div id="global-search-results" role="listbox" className="absolute top-full right-0 left-0 z-50 mt-1 overflow-hidden rounded-xl border border-line bg-white shadow-lg">
+        <div id="global-search-results" role="listbox" className="absolute top-full right-0 left-0 z-50 mt-1 overflow-hidden rounded-lg border border-line bg-white shadow-lg">
           {results.length === 0 ? (
             <p className="px-3 py-4 text-sm text-muted">No matches for “{q}”.</p>
           ) : (

@@ -180,7 +180,7 @@ export function Select({ id, value, onChange, children, disabled, className, siz
         onClick={() => (open ? close() : openMenu())}
         onKeyDown={onKey}
         className={cn(
-          "group inline-flex items-center justify-between gap-2 rounded-xl border border-line bg-white text-left text-slate-900 transition-colors hover:border-slate-300 focus:outline-none focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-100 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500 aria-[invalid=true]:border-red-400",
+          "group inline-flex items-center justify-between gap-2 rounded-lg border border-line bg-white text-left text-slate-900 transition-colors hover:border-slate-300 focus:outline-none focus-visible:border-brand-500 focus-visible:ring-2 focus-visible:ring-brand-100 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500 aria-[invalid=true]:border-red-400",
           small ? "h-8 px-2.5 text-[13px]" : "h-9 px-3 text-sm",
           !hasWidth && "w-full",
           open && "border-brand-500 ring-2 ring-brand-100",
@@ -197,7 +197,7 @@ export function Select({ id, value, onChange, children, disabled, className, siz
             ref={listRef}
             onKeyDown={onKey}
             style={{ left: pos.left, top: pos.top, width: pos.width, maxHeight: pos.maxH, transform: pos.up ? "translateY(-100%)" : undefined }}
-            className="fixed z-[70] flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_12px_32px_-8px_rgba(15,23,42,0.18)]"
+            className="fixed z-[70] flex flex-col overflow-hidden rounded-lg border border-line bg-white shadow-[0_12px_32px_-8px_rgba(15,23,42,0.18)]"
           >
             {searchable && (
               <div className="relative border-b border-line p-1.5">

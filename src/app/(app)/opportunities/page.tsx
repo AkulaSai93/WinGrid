@@ -108,7 +108,7 @@ export default function OpportunitiesPage() {
                   setDragId(null);
                   setOverStage(null);
                 }}
-                className={cn("flex w-72 shrink-0 flex-col rounded-xl border bg-slate-100/60", overStage === stage.id ? "border-brand-400 bg-brand-50/60" : "border-transparent")}
+                className={cn("flex w-72 shrink-0 flex-col rounded-lg border bg-slate-100/60", overStage === stage.id ? "border-brand-400 bg-brand-50/60" : "border-transparent")}
               >
                 <header className="px-3 pt-3 pb-2">
                   <div className="flex items-center justify-between">

@@ -261,7 +261,7 @@ export function Kpi({ label, value, sub, href }: { label: string; value: React.R
       {sub && <p className="mt-0.5 text-xs text-muted">{sub}</p>}
     </>
   );
-  const cls = "block rounded-2xl border border-brand-100 bg-brand-50/60 px-4 py-4";
+  const cls = "block rounded-lg border border-brand-100 bg-brand-50/60 px-4 py-4";
   return href ? (
     <Link href={href} className={cn(cls, "transition-colors hover:border-brand-300 hover:bg-brand-50")}>
       {body}

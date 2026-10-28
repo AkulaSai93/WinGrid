@@ -342,7 +342,7 @@ function KpiSpark({ label, value, now, prev, spark, color, unit, sub, href }: { 
       </p>
     </>
   );
-  const cls = "block rounded-2xl border border-line bg-white px-4 py-4";
+  const cls = "block rounded-lg border border-line bg-white px-4 py-4";
   return href ? (
     <Link href={href} className={cn(cls, "transition-colors hover:border-brand-300")}>
       {body}

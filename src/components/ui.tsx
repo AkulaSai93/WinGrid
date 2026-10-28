@@ -7,7 +7,7 @@ import type { LeadStatus, StageKind } from "@/lib/types";
 import { cn, initials } from "@/lib/utils";
 
 type BtnVariant = "primary" | "secondary" | "ghost" | "danger";
-const btnBase = "inline-flex items-center justify-center gap-1.5 rounded-md font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 whitespace-nowrap";
+const btnBase = "inline-flex items-center justify-center gap-1.5 rounded-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50 whitespace-nowrap";
 const btnVariants: Record<BtnVariant, string> = {
   primary: "bg-brand-600 text-white hover:bg-brand-700 shadow-[0_1px_2px_rgba(16,24,40,0.12),inset_0_1px_0_rgba(255,255,255,0.12)]",
   secondary: "bg-white text-slate-700 border border-line shadow-[0_1px_2px_rgba(16,24,40,0.04)] hover:bg-slate-50 hover:border-slate-300",
@@ -51,7 +51,7 @@ export function IconButton({ label, children, className, ...rest }: React.Button
 
 export function Card({ className, children, ...rest }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn("min-w-0 rounded-2xl border border-line bg-white", className)} {...rest}>
+    <div className={cn("min-w-0 rounded-lg border border-line bg-white", className)} {...rest}>
       {children}
     </div>
   );
@@ -82,7 +82,7 @@ export type Tone = keyof typeof badgeTones;
 
 export function Badge({ tone = "slate", children, className, dot }: { tone?: Tone; children: React.ReactNode; className?: string; dot?: boolean }) {
   return (
-    <span className={cn("inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs font-medium whitespace-nowrap", badgeTones[tone], className)}>
+    <span className={cn("inline-flex items-center gap-1.5 rounded-sm px-1.5 py-0.5 text-xs font-medium whitespace-nowrap", badgeTones[tone], className)}>
       {dot && <span className="size-1.5 rounded-full bg-current" aria-hidden />}
       {children}
     </span>
@@ -124,7 +124,7 @@ export function Avatar({ name, size = "md" }: { name: string; size?: "sm" | "md"
   );
 }
 
-const inputCls = "h-9 w-full rounded-xl border border-line bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 hover:border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 focus:outline-none disabled:bg-slate-50 aria-[invalid=true]:border-red-400 aria-[invalid=true]:ring-red-100";
+const inputCls = "h-9 w-full rounded-lg border border-line bg-white px-3 text-sm text-slate-900 placeholder:text-slate-400 hover:border-slate-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-100 focus:outline-none disabled:bg-slate-50 aria-[invalid=true]:border-red-400 aria-[invalid=true]:ring-red-100";
 
 export const Input = forwardRef<HTMLInputElement, React.InputHTMLAttributes<HTMLInputElement>>(function Input({ className, ...rest }, ref) {
   return <input ref={ref} className={cn(inputCls, className)} {...rest} />;
@@ -203,7 +203,7 @@ export function Modal({ open, onClose, title, description, children, footer, siz
   if (!open) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 pt-[8vh]" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
-      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={cn("w-full rounded-xl bg-white shadow-xl", size === "sm" ? "max-w-md" : size === "lg" ? "max-w-3xl" : "max-w-xl")}>
+      <div ref={ref} role="dialog" aria-modal="true" aria-labelledby={titleId} className={cn("w-full rounded-lg bg-white shadow-xl", size === "sm" ? "max-w-md" : size === "lg" ? "max-w-3xl" : "max-w-xl")}>
         <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-4">
           <div>
             <h2 id={titleId} className="text-base font-semibold text-slate-900">
@@ -317,7 +317,7 @@ export function PageHeader({ title, description, actions, children }: { title: s
 
 export function Tabs<T extends string>({ value, onChange, items }: { value: T; onChange: (v: T) => void; items: { value: T; label: React.ReactNode }[] }) {
   return (
-    <div role="tablist" className="inline-flex rounded-xl bg-slate-100/80 p-1">
+    <div role="tablist" className="inline-flex rounded-lg bg-slate-100/80 p-1">
       {items.map((it) => (
         <button
           key={it.value}
@@ -336,7 +336,7 @@ export function Tabs<T extends string>({ value, onChange, items }: { value: T; o
 
 export function DemoTag() {
   return (
-    <span title="Generated demo data stored in this browser" className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-amber-800 uppercase">
+    <span title="Generated demo data stored in this browser" className="hidden rounded-sm bg-amber-100 sm:inline px-1.5 py-0.5 text-[10px] font-semibold tracking-wide text-amber-800 uppercase">
       Demo data
     </span>
   );

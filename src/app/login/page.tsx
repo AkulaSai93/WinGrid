@@ -58,7 +58,7 @@ export default function LoginPage() {
 
   return (
     <AuthLayout title="Sign in to WinGrid" subtitle="Use your work email and password.">
-      <form onSubmit={submit} noValidate className="space-y-4 rounded-xl border border-line bg-white p-5 shadow-sm">
+      <form onSubmit={submit} noValidate className="space-y-4 rounded-lg border border-line bg-white p-5 shadow-sm">
         {errors.form && (
           <div role="alert" className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">
             {errors.form}
@@ -85,7 +85,7 @@ export default function LoginPage() {
         </Button>
       </form>
 
-      <div className="mt-6 rounded-xl border border-dashed border-brand-200 bg-brand-50/50 p-4">
+      <div className="mt-6 rounded-lg border border-dashed border-brand-200 bg-brand-50/50 p-4">
         <p className="text-xs font-semibold tracking-wide text-brand-800 uppercase">Demo accounts</p>
         <p className="mt-1 text-xs text-slate-600">
           Password for all: <code className="rounded bg-white px-1 font-mono">{DEMO_PASSWORD}</code>. Each role sees different data and actions.

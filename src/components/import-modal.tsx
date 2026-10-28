@@ -157,7 +157,7 @@ export function ImportModal({ open, onClose }: { open: boolean; onClose: () => v
               e.preventDefault();
               onFile(e.dataTransfer.files[0]);
             }}
-            className="flex w-full flex-col items-center rounded-xl border-2 border-dashed border-brand-200 bg-brand-50/40 px-6 py-10 text-center hover:border-brand-400"
+            className="flex w-full flex-col items-center rounded-lg border-2 border-dashed border-brand-200 bg-brand-50/40 px-6 py-10 text-center hover:border-brand-400"
           >
             <Upload className="size-7 text-brand-500" />
             <span className="mt-2 text-sm font-medium text-slate-800">Drop a CSV here or click to browse</span>

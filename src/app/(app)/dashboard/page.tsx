@@ -98,7 +98,7 @@ export default function DashboardPage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-5 [&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1">
         <Kpi label="New leads · 7 days" value={stats.newThisWeek} sub={`${delta >= 0 ? "+" : ""}${delta} vs previous 7 days`} href="/leads" />
         <Kpi label="Awaiting first contact" value={leads.filter((l) => l.status === "new").length} sub="Leads in New status" href="/leads?status=new" />
         <Kpi label="Open pipeline" value={formatMoneyCompact(stats.openValue)} sub={`${stats.open.length} open opportunities`} href="/opportunities" />
